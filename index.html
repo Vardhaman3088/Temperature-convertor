@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1(Temperature Convertor</title>
+    <style>
+        body{
+            padding: 50px;
+            text-align: center;
+            background-color: rgb(110, 115, 86);
+            
+        }
+        h1 {
+             font-size: 21px;
+            color: rgb(32, 21, 21);
+        }
+
+        #container{
+            padding: 25px;
+            display: inline-flex;
+            background-color: #e4c28d;
+           
+        }
+        .input1{
+            padding: 5pxpx;
+            margin: 15px;
+            height: 20px;
+            width: 100px;
+            border: 2px solid black;
+            text-align: center;
+        }
+        .input-div{
+            background-color: #a08a66;
+            border: 2px solid black;
+            margin: 15px;
+        }
+        #equalSign{
+            padding-top: 23px;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <button onclick="dark()" >hello</button> -->
+    <h1>Temperature Convertor</h1>
+    <div id="container">
+        <div class="input-div">
+            <label>Celcius</label><br>
+            <input type="number" value="0" id="inp1" class="input1">
+        </div>
+        <div id="equalSign">
+            <h1 style="color:black">&#61;</h1>
+        </div>
+        <div class="input-div">
+            <label>Fajrenheit</label><br>
+            <input type="number" value="32" id="inp2" class="input1">
+        </div>
+
+        <script>
+            
+            let my=document.getElementById("inp1");
+            let my1=document.getElementById("inp2");
+            my.addEventListener('input',function(){
+                let c=this.value;
+                let f=(parseInt(c))*(9/5)+32;
+                if(!Number.isInteger(f)){
+                f=f.toFixed(4);
+            }
+            my1.value=f;
+            });
+            my1.addEventListener('input',function(){
+                let f=this.value;
+                let cel=parseInt(((f)-32)*5)/9;
+                if(!Number.isInteger(cel)){
+                cel=cel.toFixed(4);
+            }
+              my.value=cel;
+            });
+        </script>
+    </div>
+</body>
+</html>
